@@ -6,8 +6,8 @@ layout: home
     <div class="section">
         <ul class="artical-cate">
             <li><a href="/technology"><span>Technology</span></a></li>
-            <li class="on"><a href="/life"><span>Life</span></a></li>
-            <li><a href="/hobbies"><span>Hobbies</span></a></li>
+            <li><a href="/life"><span>Life</span></a></li>
+            <li class="on"><a href="/hobbies"><span>Hobbies</span></a></li>
             <li><a href="/thinking"><span>Thinking</span></a></li>
             <li><a href="/aboutme"><span>AboutMe</span></a></li>
         </ul>
