@@ -5,10 +5,10 @@ layout: home
 <div class="index-content blog">
     <div class="section">
         <ul class="artical-cate">
-            <li style="text-align:left" class="on"><a href="/"><span>Blog</span></a></li>
-            <li style="text-align:left"><a href="/opinion"><span>Opinion</span></a></li>
-            <li style="text-align:left"><a href="/project"><span>Project</span></a></li>
-            <li style="text-align:left"><a href="/test"><span>Test</span></a></li>
+            <li class="on"><a href="/"><span>Blog</span></a></li>
+            <li><a href="/opinion"><span>Opinion</span></a></li>
+            <li><a href="/project"><span>Project</span></a></li>
+            <li><a href="/test"><span>Test</span></a></li>
         </ul>
 
         <div class="cate-bar"><span id="cateBar"></span></div>
