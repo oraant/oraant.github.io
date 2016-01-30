@@ -5,21 +5,15 @@ description: Zabbix如何安装？如何监控、出图、报警、发邮件？Z
 category: technology
 ---
 
-
-##Zabbix项目实践文档
->版本：v1.5
-作者：oraant
-时间：2016年1月20日 11:26:36
-
-[TOC]
 ## 一、Zabbix简介
+
 #### 1. 关于智能运维
 随着技术的发展，云计算和大数据变得热门，企业的IT设施也在不断的增长。面对着成千上万的机器集群，传统的运维方式已经渐渐无法满足时代的要求，如何同时监控大批量的机器并智能报警、同时批量配置机器、在整套业务系统中快速定位问题，成为了运维人员需要掌握的基本技能。
 面对这样的需要，市面上也涌现了一大批高质量的智能运维产品，目前看来，智能运维产品主要有以下三种：
 - 监控及报警：监控机器性能、网卡、服务是否开启等，发现问题通过邮件、短信等方式及时报警。
 - 批量配置：快速将某些配置同步到大量的机器中。
 - 问题快速定位：从大量机器中监控各项日志、业务流程，快速定位出现的问题。
-- 应用监控测试：监控业务的响应时间，主要体现在网页监控上，此处不进行说明
+- 应用监控测试：监控业务的响应时间，主要体现在网页监控上，此处不进行说明。
 
 市面上常见的较为完善的产品如下（加粗为推荐产品）：
 
@@ -46,7 +40,6 @@ category: technology
 1. **Cacti**：cacti是基于PHP,MySQL,SNMP及RRDTool开发的网络流量监测图形分析工具。可以通过SNMP协议或自定义脚本的方式，从主机、数据库、应用、硬件设备中抓取相关的性能参数，并通过RRDTOOL绘制成趋势图展示出来。
 Cacti包含了用户管理、监控模板、树形图展示等功能，可以方便的大批量的展示趋势图片，和Zabbix相比，Cacti的界面清晰美观，但功能上要逊色很多。
 ![](/images/2016-01-29-zabbix-install-and-usage/95f8e50f-dea9-4f32-8094-b5daf854089d.jpg)
-![Git Bash](/images/githubpages/bootcamp_1_win_gitbash.jpg)
 
 2. **Nagios**：Nagios是一个监视系统运行状态和网络信息的监视系统。Nagios能监视所指定的本地或远程主机以及服务，同时提供异常通知功能等。设计者将Nagios设计成监测的管理中心，尽管其功能是监测服务和主机，但是他自身并不包括这部分功能的代码，所有的监测、监测功能都是由相关插件来完成的，包括报警功能。
 nagios最大的亮点是轻量灵活，且报警机制很强。在企业中，经常将Nagios和Cacti结合起来使用。
@@ -109,10 +102,8 @@ MySQL版本：5.1.73
 1. 配置好服务器的本地yum源（此处不做详细介绍）
 
 2. 安装基础的软件包（确保以下每个包都安装了）
-```
 # yum -y groupinstall "Development Tools"
 # yum -y install httpd mysql mysql-server php php-mysql php-common php-mbstring php-gd php-odbc php-pear curl curl-devel net-snmp net-snmp-devel perl-DBI php-xml ntpdate php-bcmath
-```
 
 3. 创建Zabbix用户
 ```

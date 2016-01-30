@@ -1,7 +1,9 @@
-auto: true
+#auto: true
 
-markdown: rdiscount
-pygments: true
+#markdown: rdiscount
+markdown: Kramdown
+#markdown: redcarpet
+highlight: true
 paginate: 8
 permalink: /:title
 
@@ -9,3 +11,5 @@ title: oraant
 url: http://oraant.github.io
 feed: /atom.xml
 author_info: <a href="http://oraant.github.io/">OraAnt</a>
+
+gems: [jekyll-paginate]
