@@ -58,10 +58,10 @@ layout: default
 <!-- 多说点击加载函数 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     function toggleDuoshuoComments(container){
-        var el = document.createElement('div');//该div不需要设置class="ds-thread"
-        el.setAttribute('data-thread-key', '文章的本地ID');//必选参数
-        el.setAttribute('data-url', '你网页的网址');//必选参数
-        el.setAttribute('data-author-key', '作者的本地用户ID');//可选参数
+        var el = document.createElement('div');
+        el.setAttribute('data-thread-key', location.pathname.split(/\./)[0]);
+        el.setAttribute('data-url', location.href );
+        el.setAttribute('data-author-key', 'oraant');
         DUOSHUO.EmbedThread(el);
         jQuery(container).append(el);
     }
