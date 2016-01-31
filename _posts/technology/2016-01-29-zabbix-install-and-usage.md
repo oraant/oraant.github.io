@@ -3,6 +3,7 @@ layout: post
 title: 安装/搭建/使用Zabbix
 description: Zabbix如何安装？如何监控、出图、报警、发邮件？Zabbix还有哪些功能？
 category: technology
+tags: Zabbix,智能运维
 ---
 
 ## 一、Zabbix简介
