@@ -1,8 +1,8 @@
 #auto: true
 
 #markdown: rdiscount
-markdown: Kramdown
 #markdown: redcarpet
+markdown: Kramdown
 highlight: true
 paginate: 8
 permalink: /:title
