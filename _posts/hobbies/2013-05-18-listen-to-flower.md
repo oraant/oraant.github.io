@@ -3,7 +3,7 @@ layout: post
 title: 听花
 category: hobbies
 description: 大学时代，青涩的文笔，第一篇完结的短篇小说。我想说，事隔两年，我已经看不懂当时要表达什么了。
-tags: image
+tags: novel
 ---
 
 ## 第一卷 窗边的紫罗兰，忧郁的少年。
