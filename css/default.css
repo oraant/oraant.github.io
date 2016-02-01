@@ -92,15 +92,26 @@ pre ol{margin-left:25px;list-style-type:decimal;}
     background-size:cover;
     background-position:50% 50%;
 }
-.blog .aside{
-    background-image:url(https://d233eq3e3p3cv0.cloudfront.net/max/1000/0*cF2i1ZosSP_UTJig.jpeg);
+
+.home .aside{
+    background-image:url('/images/aside/home.jpg');
 }
-.opinion .aside{
-    background-image:url(https://dnqgz544uhbo8.cloudfront.net/_/fp/img/bestof/june-2013.CaUUbO2jIECgCmldhmxCCA.jpg);
+.technology .aside{
+    background-image:url('/images/2015-01-17-android-wallpaper/wintersweet.jpg');
 }
-.project .aside{
-    background-image:url('https://d233eq3e3p3cv0.cloudfront.net/max/1000/0*kTUZamBulGQZg1MW.jpeg')
+.life .aside{
+    background-image:url('/images/2015-01-17-android-wallpaper/mr_right.jpg')
 }
+.hobbies .aside{
+    background-image:url('/images/2015-01-17-android-wallpaper/girl_sky.jpg')
+}
+.thinking .aside{
+    background-image:url('/images/2015-01-17-android-wallpaper/mr_box.jpg')
+}
+.aboutme .aside{
+    background-image:url('/images/2015-01-17-android-wallpaper/mr_six.jpg')
+}
+
 .index-content .section { margin-left:30%; padding-top:80px; padding-right:5%; ;}
 
 .index-content .artical-list { width:70%; margin:0 auto; }

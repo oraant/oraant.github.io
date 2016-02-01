@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<div class="index-content blog">
+<div class="index-content technology">
     <div class="section">
         <ul class="artical-cate">
             <li class="on"><a href="/technology"><span>Technology</span></a></li>
