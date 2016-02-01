@@ -94,22 +94,22 @@ pre ol{margin-left:25px;list-style-type:decimal;}
 }
 
 .home .aside{
-    background-image:url('/images/aside/home.jpg');
+    background-image:url('/images/aside/a.jpg');
 }
 .technology .aside{
-    background-image:url('/images/2015-01-17-android-wallpaper/wintersweet.jpg');
+    background-image:url('/images/aside/b.jpg');
 }
 .life .aside{
-    background-image:url('/images/2015-01-17-android-wallpaper/mr_right.jpg')
+    background-image:url('/images/aside/c.jpg')
 }
 .hobbies .aside{
-    background-image:url('/images/2015-01-17-android-wallpaper/girl_sky.jpg')
+    background-image:url('/images/aside/d.jpg')
 }
 .thinking .aside{
-    background-image:url('/images/2015-01-17-android-wallpaper/mr_box.jpg')
+    background-image:url('/images/aside/e.jpg')
 }
 .aboutme .aside{
-    background-image:url('/images/2015-01-17-android-wallpaper/mr_six.jpg')
+    background-image:url('/images/aside/f.jpg')
 }
 
 .index-content .section { margin-left:30%; padding-top:80px; padding-right:5%; ;}
