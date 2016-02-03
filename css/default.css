@@ -74,7 +74,7 @@ pre ol{margin-left:25px;list-style-type:decimal;}
 /*.entry p+ul {margin-top:10px;}*//*改版*/
 .entry ul li{margin-bottom:5px;list-style:disc;line-height:1.8em;}
 .entry ol{margin-bottom:25px;margin-left:25px;}
-.entry ol li{margin-bottom:5px;list-style:decimal;line-height:1.1em;}
+.entry ol li{margin-bottom:5px;list-style:decimal;line-height:1.8em;}
 .entry blockquote{padding:0 0 0 15px;font-style:italic;background-color:rgb(241,242,239);border-left:10px solid rgb(214,219,223);}
 /*.entry blockquote{margin-left:25px;font-size:14px;font-style:italic}*//*原版*/
 .entry img{max-width:670px;display:block;margin:10px auto;}
