@@ -31,35 +31,35 @@ layout: default
     <div class="sidenav">
         <h2>Technology</h2>
         <ul class="artical-list">
-        {% for post in site.categories.technology%}
+        {% for post in site.categories.technology limit:10 %}
             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
         </ul>
 
         <h2>Life</h2>
         <ul class="artical-list">
-        {% for post in site.categories.life%}
+        {% for post in site.categories.life limit:10 %}
             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
         </ul>
 
         <h2>Hobbies</h2>
         <ul class="artical-list">
-        {% for post in site.categories.hobbies%}
+        {% for post in site.categories.hobbies limit:10 %}
             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
         </ul>
 
         <h2>Thinking</h2>
         <ul class="artical-list">
-        {% for post in site.categories.thinking%}
+        {% for post in site.categories.thinking limit:10 %}
             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
         </ul>
 
         <h2>AboutMe</h2>
         <ul class="artical-list">
-        {% for post in site.categories.aboutme%}
+        {% for post in site.categories.aboutme limit:10 %}
             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
         </ul>
