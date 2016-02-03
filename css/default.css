@@ -171,7 +171,7 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
     h3{font-size:16px;}
     embed {display:none;}
 
-    .index-content .artical-cate li { display:block; text-align:center; *float:left; zoom:1; font-size:18px; width:100%; cursor:pointer; padding:10px;}
+    .index-content .artical-cate li { display:block; text-align:center; *float:left; zoom:1; font-size:18px; width:100%; cursor:pointer; padding:10px 0 10px 0;}
 
     .entry-title,.entry-title a {font-size:24px;}
     .entry-date {margin-bottom:40px;}
