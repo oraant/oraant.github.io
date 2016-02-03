@@ -1,6 +1,6 @@
 ---
 layout: poem
-title: 异族四则
+title: 诗 异族四则
 category: hobbies
 description: 常常在想那些异族的故事，你们沧桑的背后，埋藏了多少过去。
 tags: poems

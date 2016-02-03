@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 做过的安卓壁纸
+title: 图 做过的安卓壁纸
 category: hobbies
 description: 曾经我也是个P客呀
 tags: image

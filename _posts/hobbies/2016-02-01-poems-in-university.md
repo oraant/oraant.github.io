@@ -1,6 +1,6 @@
 ---
 layout: poem
-title: 矫情的大学时代
+title: 诗 矫情的大学时代
 category: hobbies
 description: 大学时代的“小诗集合”，我不会写诗，所以这不算是诗，只能算是矫情。我想。
 tags: poems
