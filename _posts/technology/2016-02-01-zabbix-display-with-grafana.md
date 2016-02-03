@@ -8,7 +8,7 @@ tags: Zabbix,智能运维,Grafana
 
 ## 先大体的了解一下Grafana
 
->**注意，如果只想看Grafana如何给Zabbix出图，那么不需要看InfluxDB和collectd的相关内容**
+>注意，如果只想看Grafana如何给Zabbix出图，那么不需要看InfluxDB和collectd的相关内容！！
 
 ### 一，关闭不需要的服务
 
