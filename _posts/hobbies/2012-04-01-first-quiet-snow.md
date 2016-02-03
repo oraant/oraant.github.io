@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: poem
 title: 莫言初雪
 category: hobbies
 description: 我所想写的，那个刺客

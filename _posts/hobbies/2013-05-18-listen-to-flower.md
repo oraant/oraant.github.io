@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: poem
 title: 听花
 category: hobbies
 description: 大学时代，青涩的文笔，第一篇完结的短篇小说。我想说，事隔两年，我已经看不懂当时要表达什么了。

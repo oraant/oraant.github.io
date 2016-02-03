@@ -120,6 +120,7 @@ pre ol{margin-left:25px;list-style-type:decimal;}
 .index-content h2 a { color:#444 }
 .index-content h2 a:hover { color:#E50053; text-decoration:none; }
 .index-content .title-desc {color:#999;font-size:14px;line-height:1.6em;}
+.index-content .title-tags {color:#ccc;font-size:9px;line-height:2em;}
 
 .index-content .artical-cate { width:85%; margin:0 auto; }
 .index-content .artical-cate li { display:inline-block; *float:left; zoom:1; font-size:18px; width:19%; cursor:pointer; }

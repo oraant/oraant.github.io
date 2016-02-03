@@ -3,6 +3,7 @@ layout: post
 title: Hello,World.
 category: life
 description: 我的第一篇博客！世界你好！pages.github你好！
+tags: blog
 ---
 
 ### 感谢
