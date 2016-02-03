@@ -2,7 +2,7 @@
 layout: post
 title: 童 女巫与骑士
 category: thinking
-description: 常常在想那些异族的故事，你们沧桑的背后，埋藏了多少过去。
+description: 两个故事都看完后再下结论也不迟。
 tags: tale
 ---
 
