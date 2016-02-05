@@ -7,6 +7,9 @@ layout:           default
 <script type="text/javascript">
     $(function(){
         function animateBar($item,noAni){
+
+            if($item.length == 0){return} //自己加的，否则首页不选所在分类的话，会导致空元素报错，影响菜单栏显示头像。
+
             var spanLeft = $item.find('span').offset().left;
             var conLeft = $item.parent().offset().left;
             var left = spanLeft - conLeft;
