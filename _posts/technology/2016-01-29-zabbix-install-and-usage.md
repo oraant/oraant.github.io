@@ -538,4 +538,4 @@ mysql> FLUSH PRIVILEGES;
 
 - [官方文档](https://www.zabbix.com/documentation)
 - [官方论坛](https://www.zabbix.com/forum/)
-- [运维生存时间系列教程](http//www.ttlsa.com/zabbix/)
+- [运维生存时间系列教程](http://www.ttlsa.com/zabbix/)
