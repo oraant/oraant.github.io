@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 网 技能列表
+title: 网 全栈工程师技能图
 category: hobbies
 description: 自己到底算不算全栈工程师？分享一下自己的技能列表吧~
 tags: website
