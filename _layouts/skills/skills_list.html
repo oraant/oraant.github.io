@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	
+	<script>
+		//短网址生成，点击确定复制到剪贴板
+	
+		var params,display,name,language,skills,maxlv=5;
+	
+		var metris = [
+			["advanced skills :","Skill7","Skill8","Skill9"],
+			["middle skills :","Skill4","Skill5","Skill6"],
+			["base skills :","Skill1","Skill2","Skill3"]
+			]
+		
+		try {metris = [{{content}}]} catch(e){console.log(e)};
+
+		var lang_en = {
+			share_prompt:"your link is like this,please copy that.",
+			please_input_your_name:"please input your name",
+			not_edit_mode:"not edit mode",
+			old_skill_has_been_deleted:"some old skills has been deleted : ",
+			some_skill_level_is_over_limit:"some skill level is over limit : ",
+			
+			input_name:"Input Your Name Here",
+			generate:"Generate Url",
+			placeholder_null:"未输入姓名",
+			
+			title:"Full Stack Engineer Skills",
+			p1:"This is a page to draw your skill tree.Just click on the button to change it color as level 0 to level 5.",
+			p2:"White: Knows nothing. Yellow: Know a little. Green:Often use. Blue: Experienced. Vermilion: Expert. Red: Master.",
+			change_to_language:"中",
+			generate_url_and_share:"Share",
+			edit_it_now:"Edit",
+			clear_all:"Clear",
+			maker:"Made By Oraant",
+			home:"Back To Home",
+			source_code:"Source Code",
+			}
+	
+		var lang_ch = {
+			share_prompt:"您的分享链接如下，访问此网址即可看到您的技能等级图。推荐使用百度短网址进行缩短哦(^_^)。",
+			please_input_your_name:"请在此输入您的姓名",
+			not_edit_mode:"当前为非编辑模式，无法清空",
+			old_skill_has_been_deleted:"由于技能图升级，去掉了您之前保存部分技能：",
+			some_skill_level_is_over_limit:"部分技能的级别超出了限制，已重置为0级：",
+			
+			input_name:"Input Your Name Here",
+			generate:"Generate Url",
+			placeholder_null:"未输入姓名",
+			
+			title:"全栈工程师技能图",
+			p1:"欢迎使用全栈工程师技能图！点击技能对应的按钮，即可改变按钮的颜色，对应6种等级。颜色越深，级别越高，说明对这门技能越熟悉。",
+			p2:"纯白：不甚了解。淡黄：刚刚熟悉。浅绿：熟练应用。深蓝：经验丰富。橘红：二线专家。深红：一代大师。",
+			change_to_language:"En",
+			generate_url_and_share:"分享",
+			edit_it_now:"编辑",
+			clear_all:"清空",
+			maker:"Oraant制作",
+			home:"返回家目录",
+			source_code:"源码地址",
+			}
+			
+
+
+		/* functions for register buttons */
+		function registerChangeLanguage(){
+			$("#changeLanguage").click(function(){
+				if(language == "en"){
+					language = "ch";
+				}else if (language == "ch"){
+					language = "en";
+				}
+				setLanguage(language);
+			})
+		}
+		
+		function registerGenerateUrl(){
+			$("#generateUrl").click(function(){
+				skills = [];
+				$(".skill").each(function(){
+					levelName = getLevelName($(this).attr("class"));
+					if (levelName.substr(5,1)!=0){
+						skill = $(this).attr("id") + "=" + levelName.substr(5,1);
+						skills.push(skill);
+					}
+				})
+				longUrl = window.location.href.split('?')[0] + "?show;" + $("#name").val() + ";" + language + ";" + skills.join(",");
+				prompt(lang.share_prompt,longUrl);
+			});
+		}
+		
+		function registerEditAble(){
+			$("#editAble").click(function(){
+				editAble();
+			})
+		}
+		
+		function registerClearAll(){
+			$("#clearAll").click(function(){
+				if (display != "edit"){alert(lang.not_edit_mode);return};
+				$(".skill").each(function(){
+					levelName = getLevelName($(this).attr("class"));
+					$(this).removeClass(levelName);
+					
+					$(this).addClass("level0");
+				})
+			})
+		}
+		
+		/* functions for set and change language. */
+		
+		function getLangByLanguage(){
+			switch(language){
+				case "en":
+					lang = lang_en;
+					break;
+				case "ch":
+					lang = lang_ch;
+					break;
+				default:
+					lang = lang_en;
+					break;
+			}
+			return lang;
+		}
+		
+		function setLanguage(){
+			lang = getLangByLanguage();
+			$("#title").text(lang.title);
+			$("#p1").text(lang.p1);
+			$("#p2").text(lang.p2);
+			$("#name").attr("placeholder",lang.please_input_your_name);
+			$("#changeLanguage").text(lang.change_to_language);
+			$("#generateUrl").text(lang.generate_url_and_share);
+			$("#editAble").text(lang.edit_it_now);
+			$("#clearAll").text(lang.clear_all);
+			$("#maker").text(lang.maker);
+			$("#home").text(lang.home);
+			$("#source").text(lang.source_code);
+		}
+		
+		/*functions for draw skills button and color*/
+		
+		function changeLevel(level){
+			lv = level.substr(5,1)*1 + 1;
+			if (lv == 6){lv = 0}
+			return "level" + lv;
+		}
+		
+		function getLevelName(className){
+			return className.split(" ").filter(function (x){return x.substr(0,5)=="level"})[0];
+		}
+		
+		function drawColor(){
+			null_metris = [];
+			over_metris = [];
+			
+			for (i=0; i<skills.length; i++){
+				skill = skills[i].split('=');
+				skill_name = "#" + skill[0].toLowerCase().replace(/\s/g,"_");
+				skill_level = "level" + skill[1];
+				skill_lable = $(skill_name)
+				
+				if (skill_level.substr(5,1) > maxlv || skill_level < 0){
+					over_metris.push(skill[0]);
+					skill_level = 0;
+				}
+				
+				if (skill_lable.length==0){
+					null_metris.push(skill[0]);
+				}else{
+					skill_lable.removeClass("level0").addClass(skill_level);
+				}
+			}
+			
+			if (null_metris.length!=0){
+				msg = lang.old_skill_has_been_deleted + null_metris;
+				alert(msg);
+			}
+			
+			if (over_metris.length!=0){
+				msg = lang.some_skill_level_is_over_limit + over_metris;
+				alert(msg);
+			}
+		}
+		
+		function drawSkills(metris){
+		for (i in metris){
+				$("#mainTab").append('<div class="row-fluid"><div class="span12 tag-row"></div></div>')
+				for (j in metris[i]){
+					text=metris[i][j];
+					if (j==0){
+						$("#mainTab .row-fluid:last-of-type .tag-row:last-of-type").append('<button class="btn btn-sm lvhead" id="' + text.toLowerCase().replace(/\s/g,"_")  + '" type="button">' + text + '</button> ');
+					} else{
+						$("#mainTab .row-fluid:last-of-type .tag-row:last-of-type").append('<button class="btn btn-sm btn-default level0 skill" id="' + text.toLowerCase().replace(/\s/g,"_")  + '" type="button" disabled>' + text + '</button> ');
+					}
+					
+				}
+			}
+		}
+		
+		/* do some job */
+		
+		function editAble(){
+				display = "edit";
+				
+				$(".skill").click(function(){
+					levelName = getLevelName($(this).attr("class"));
+					$(this).removeClass(levelName);
+					
+					levelName = changeLevel(levelName);
+					$(this).addClass(levelName);
+				});
+				
+				$("#editAble").addClass("disabled");
+				$("#name").attr("disabled",false).attr("placeholder",lang.please_input_your_name);
+				$(".skill").attr("disabled",false).addClass("editAble");
+		}
+
+		function getParams(){
+			params=decodeURI(window.location.search.substr(1));
+			
+			params=(params.length==0)?["","","",""]:params.split(';');
+			while (params.length < 4){
+				params.push("")
+			}
+			
+			display = (params[0].length==0)?"edit":params[0];
+			name = (params[1].length==0)?"":params[1];
+			language = (params[2].length==0)?"en":params[2];
+			skills = (params[3].length==0)?"":params[3].split(',');
+		}
+		
+		$(document).ready(function(){
+		
+			// get parameters
+			getParams();
+			
+			// read metris and generate html elements.
+			drawSkills(metris);
+
+			// set display,name,language,skills
+			setLanguage();
+			if (display == "edit"){
+				editAble();
+			}
+			$("#name").val(name);
+			drawColor();
+			
+			
+			// generate parameters
+			registerGenerateUrl();
+			registerEditAble();
+			registerClearAll();
+			registerChangeLanguage();
+			
+		});
+		
+	</script>
+	
+	
+	<style>
+	
+		.level0,.level0:hover,.level0:focus{background-color:#ffffff !important;opacity:1 !important;color:#000;border-color:#ccc}
+		.level1,.level1:hover,.level1:focus{background-color:#def068 !important;opacity:1 !important;color:#000;border-color:#ccc}
+		.level2,.level2:hover,.level2:focus{background-color:#58db46 !important;opacity:1 !important;color:#fff;border-color:#ccc}
+		.level3,.level3:hover,.level3:focus{background-color:#4479db !important;opacity:1 !important;color:#fff;border-color:#ccc}
+		.level4,.level4:hover,.level4:focus{background-color:#eb6c6c !important;opacity:1 !important;color:#fff;border-color:#ccc}
+		.level5,.level5:hover,.level5:focus{background-color:#ff0000 !important;opacity:1 !important;color:#fff;border-color:#ccc}
+		
+		.editAble{transition:All 0.2s;}
+		.editAble:hover{
+			transform:translate(0,-10px);-webkit-transform:translate(0,-2px);-moz-transform:translate(0,-10px);-o-transform:translate(0,-10px);-ms-transform:translate(0,-10px);
+			border-color:#aaa;
+		}
+		
+		.lvhead,.lvhead:hover,.lvhead:focus{background-color:#333333;color:#fff;width:150px;text-align:right;margin-right:5px;}
+		.tag-row{margin-bottom:4px}
+		.p,.h1{font-family:"Microsoft YaHei", Verdana, Geneva, sans-serif;}
+		
+	</style>
+	
+</head>
+<body>
+	<div class="container-fluid" style="vertical-align:middle;">
+		<div class="row-fluid"><div class="col-xs-12">
+			<h1> </h1>
+		</div></div>
+		
+		<div class="row-fluid">
+			<div class="col-xs-2" style='font-family:"Microsoft YaHei", Verdana, Geneva, sans-serif;'>
+				<h1 id="title"></h1>
+				<hr>
+				<input class="form-control" id="name" type="text" autocomplete="on" maxlength="30" disabled/>
+				<br>
+				<div class="btn-group">
+					<button class="btn btn-sm btn-primary" id="changeLanguage" type="button"></button>
+					<button class="btn btn-sm btn-primary" id="generateUrl" type="button"></button>
+					<button class="btn btn-sm btn-primary" id="editAble" type="button"></button>
+					<button class="btn btn-sm btn-primary" id="clearAll" type="button"></button>
+				</div>
+				<hr>
+				<p id="p1">请更换Chrome内核的浏览器，或点击浏览器的地址栏右面急速模式。</p>
+                <p id="p2">Please change to the chrome browser.</p>
+				<hr>
+				<a id="maker" href="http://oraant.github.io"></a>
+				<br>
+				<a id="home" href="http://oraant.github.io"></a>
+				<br>
+				<a id="source" href="http://github.com/oraant/skills"></a>
+			</div>
+			<div class="col-xs-10" id="mainTab"></div>
+		</div>
+	</div>
+</body>
+</html>
