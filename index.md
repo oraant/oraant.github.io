@@ -40,7 +40,7 @@ layout: home
             </li>
             <li>
                 <h2>有哪些项目？</h2>
-                <div class="title-desc"><a href="/project/skills.html">全栈工程师技能树</a></div>
+                <div class="title-desc"><a href="/project/skills/full_stack_skills_list.html">全栈工程师技能树</a></div>
             </li>
 	</ul>
 
