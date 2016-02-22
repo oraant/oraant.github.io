@@ -19,4 +19,4 @@ tags: website
 - [全栈工程师技能图](http://oraant.github.io/project/skills/full_stack_skills_list.html?;;ch)
 - [OraAnt的技能图](http://oraant.github.io/project/skills/full_stack_skills_list?show;欢迎查看OraAnt的技能树;ch;server_hardware=2,raid=1,network_protocols=2,linux=3,windows_server=1,vmware=3,virtualbox=3,aws=2,load_balancing=2,partitioning=1,rpm=2,bash=3,apache=2,mysql=2,sql_server=1,oracle=4,elasticsearch=2,php=1,java=2,python=3,javascript=2,wordpress=1,django=2,html5=2,css3=2,sql_injection=1,ui=3,photoshop=3,user_requirements_gathering=2,project_management=2)
 
-如果嫌分享网址过长，可以使用[百度短网址](http://dwz.cn/)来缩短哦。
+如果嫌分享网址过长，可以使用[新浪短网址](http://sina.lt/)来缩短哦。
