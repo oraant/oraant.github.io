@@ -6,6 +6,12 @@ category: technology
 tags: bootstrap,python,flask
 ---
 
+## 快速搭建一个web服务器
+
+>
+- Document Version: 1.2
+- OS Environment: RHEL6.5
+
 ## 一、Flask框架
 
 ### 1，Flask简介
@@ -32,51 +38,25 @@ Django是一个使用广泛、较为成熟稳定的web框架，正式项目中�
 
 ### 2，Flask安装
 
-#### PyEnv的安装与使用
-
-在安装Flask之前，我要提一个问题：
-
-假设我的Linux机器上有两个项目，其中一个项目要求Python的版本是2.7.9，另一个项目要求使用Python3，而很多系统文件则依赖2.6.6版的Python，此时，到底安装哪个版本的Python才好？
-
-显然，为了满足各个项目的要求，需要把所有版本的Python都装上。然而这样，不同版本Python之间的管理和冲突成了一个大麻烦，为了解决这个问题，我们可以使用PyEnv，一个Python版本管理软件。
-
-PyEnv的安装和配置如下（需联网）：
-
-~~~SHELL
-## 从github上下载PyEnv的安装脚本并执行
-curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
-
-## 配置当前用户的环境变量
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
-
-## 使环境变量生效
-source ~/.bash_profile
-~~~
-
-安装完成后，我们一起来尝试着使用pyenv：
+配置好本地yum源后，将开发包的所有软件都装齐
 
 ~~~
-pyenv ## 测试是否可以使用，列出相关用法
-pyenv versions ## 查看当前已安装了哪些版本的Python，*是指当前使用的版本
-pyenv which python ## 查看当前python命令的路径
-
-#使用pyenv安装2.7.9版本的Python（需联网）
-pyenv install 2.7.9 ## 安装2.7.9的Python
-pyenv global 2.7.9 ## 更换默认使用哪个版本的Python
-pyenv versions ## 查看当前有哪些版本
-pyenv which python ## 查看当前python命令的路径
+yum -y groupinstall "Development Tools"
 ~~~
 
-#### Pip的使用
+访问Flask的[下载网址](https://pypi.python.org/pypi/Flask)，下载最新版（目前是0.10.1）的安装文件。
 
-利用PyEnv安装Python时，会把对应版本的pip工具也安装好。pip是一个专门用来安装pip第三方模块的工具，指定要安装的模块，pip会自动从网络上下载并安装相关组件。
+下载并上传到Linux服务器上后，解压并安装Flask（需联网，Flask需要依赖python其他的一些包，如果没装过则会联网下载）
 
 ~~~
-## 利用pip安装Flask（需联网）
-pyenv which pip ## 查看当前pip命令的路径
-pip install Flask ## 使用pip安装Flask
+tar -xf Flask-0.10.1.tar.gz
+cd Flask-0.10.1/
+python setup.py install
+~~~
+
+在python中导入flask的包，如果没有报错，则说明安装成功
+
+~~~
 python ## 进入Python交互界面
 >>> import flask ## 在Python交互界面中，导入flask包，如果没有报错，则说明Flask安装好了
 ~~~
@@ -274,6 +254,12 @@ HTML语言是一种标记语言，一个最简单的html文档格式应该如下
 ### 3，扩展
 
 如果想做出漂亮的网页，不但要学习html语言，还要对css有所了解，在对css有了一定基础的情况下，再套用一些现成的前端框架，如bootstrap，或是直接使用在线其布局系统，方便快速的做出一个网页。
+
+CSS：方便的统一指定页面的展示方式（颜色、大小、动画等）
+
+BootStrap：一套基于CSS的框架，可以理解为皮肤
+
+JS：使页面动起来（[小例子](http://www.tripwiremagazine.com/wp-content/uploads/images/stories/Articles/9_Funniest_JavaScript_effects/You%20must%20love%20me.html)）
 
 由于此教程的目的不在于此，故前端相关内容请凭兴趣自学。
 
